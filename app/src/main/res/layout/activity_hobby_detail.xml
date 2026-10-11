@@ -29,22 +29,12 @@
 
         <TextView
             android:id="@+id/tv_detail_top_title"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/title_hobby"
             android:textAppearance="@style/TextAppearance.App.Title"
             android:textColor="@color/color_text_primary"
             android:textSize="22sp" />
-
-        <ImageButton
-            android:id="@+id/btn_detail_more"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/action_info"
-            android:src="@drawable/ic_more_vert"
-            app:tint="@color/color_text_primary" />
     </LinearLayout>
 
     <!-- Nội dung cuộn -->

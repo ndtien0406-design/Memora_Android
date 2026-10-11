@@ -50,6 +50,11 @@
     <string name="action_take_photo">Take Photo</string>
     <string name="action_choose_gallery">Choose from Gallery</string>
     <string name="action_remove_photo">Remove Photo</string>
+    <string name="action_adjust_frame">Adjust photo frame</string>
+    <string name="title_crop_image">Adjust Frame</string>
+    <string name="hint_crop_gesture">Drag to move, pinch with two fingers to zoom</string>
+    <string name="action_done">Done</string>
+    <string name="action_rotate">Rotate photo</string>
     <string name="label_cover_photo">Cover Photo</string>
     <string name="hint_tap_to_add_photo">Tap to take or choose photo</string>
     <string name="hint_photo_types">Supports JPG, PNG formats</string>

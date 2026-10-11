@@ -93,7 +93,38 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <!-- Dòng 3: Xóa ảnh (chữ đỏ nhạt, chỉ hiện khi đã có ảnh) -->
+    <!-- Dòng 3: Căn chỉnh lại khung ảnh (chỉ hiện khi đã có ảnh) -->
+    <LinearLayout
+        android:id="@+id/btn_action_adjust_frame"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_crop"
+            android:contentDescription="@null"
+            app:tint="@color/color_text_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/action_adjust_frame"
+            android:textAppearance="@style/TextAppearance.App.Body"
+            android:textColor="@color/color_text_primary"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Dòng 4: Xóa ảnh (chữ đỏ nhạt, chỉ hiện khi đã có ảnh) -->
     <LinearLayout
         android:id="@+id/btn_action_remove_photo"
         android:layout_width="match_parent"

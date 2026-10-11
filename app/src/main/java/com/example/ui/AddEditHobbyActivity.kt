@@ -157,6 +157,24 @@ class AddEditHobbyActivity : AppCompatActivity() {
         uri?.let { processGalleryPhoto(it) }
     }
 
+    // Launcher mở màn hình Căn chỉnh khung ảnh (Crop)
+    private val cropImageLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        tempCameraFilePath?.let { tempPath ->
+            try { File(tempPath).delete() } catch (_: Exception) {}
+            tempCameraFilePath = null
+        }
+
+        if (result.resultCode == RESULT_OK) {
+            val croppedPath = result.data?.getStringExtra(CropImageActivity.EXTRA_CROPPED_PATH)
+            if (!croppedPath.isNullOrBlank()) {
+                setCurrentImage(croppedPath)
+                Toast.makeText(this, getString(R.string.msg_photo_saved), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -304,6 +322,13 @@ class AddEditHobbyActivity : AppCompatActivity() {
                 PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
             )
         }
+        bottomSheet.onAdjustFrameListener = {
+            currentImagePath?.let { path ->
+                if (File(path).exists()) {
+                    cropImageLauncher.launch(CropImageActivity.createIntent(this, path))
+                }
+            }
+        }
         bottomSheet.onRemovePhotoListener = {
             setCurrentImage(null)
             Toast.makeText(this, getString(R.string.msg_photo_removed), Toast.LENGTH_SHORT).show()
@@ -357,20 +382,13 @@ class AddEditHobbyActivity : AppCompatActivity() {
         val tempPath = tempCameraFilePath ?: return
         val tempFile = File(tempPath)
         if (tempFile.exists() && tempFile.length() > 0) {
-            val savedPath = saveImageToPermanentStorage(tempFile)
-            setCurrentImage(savedPath)
-            tempFile.delete()
-            Toast.makeText(this, getString(R.string.msg_photo_saved), Toast.LENGTH_SHORT).show()
+            cropImageLauncher.launch(CropImageActivity.createIntent(this, tempPath))
         }
     }
 
     private fun processGalleryPhoto(uri: Uri) {
         try {
-            contentResolver.openInputStream(uri)?.use { inputStream ->
-                val savedPath = saveInputStreamToPermanentStorage(inputStream)
-                setCurrentImage(savedPath)
-                Toast.makeText(this, getString(R.string.msg_photo_saved), Toast.LENGTH_SHORT).show()
-            }
+            cropImageLauncher.launch(CropImageActivity.createIntent(this, uri))
         } catch (e: Exception) {
             Toast.makeText(this, getString(R.string.error_cannot_read_gallery), Toast.LENGTH_SHORT).show()
         }

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/crop_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar: Nút Back, Tiêu đề serif và nút Xoay ảnh -->
+    <LinearLayout
+        android:id="@+id/top_bar_crop"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="@color/color_background">
+
+        <ImageButton
+            android:id="@+id/btn_crop_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/action_back"
+            app:tint="@color/color_text_primary" />
+
+        <TextView
+            android:id="@+id/tv_crop_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_crop_image"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="18sp" />
+
+        <!-- Nút xoay ảnh 90 độ -->
+        <ImageButton
+            android:id="@+id/btn_crop_rotate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_rotate_right"
+            android:contentDescription="@string/action_rotate"
+            app:tint="@color/color_text_primary" />
+    </LinearLayout>
+
+    <!-- Khu vực chỉnh khung ảnh tương tác -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/black">
+
+        <com.example.ui.crop.CropImageView
+            android:id="@+id/crop_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- Bottom Controls: Hướng dẫn cử chỉ và nút Áp dụng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="24dp"
+        android:background="@color/color_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/hint_crop_gesture"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_crop_apply"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/action_done"
+            android:textColor="@color/color_on_accent"
+            android:backgroundTint="@color/color_accent"
+            app:icon="@drawable/ic_check"
+            app:iconTint="@color/color_on_accent"
+            app:iconGravity="textStart"
+            app:cornerRadius="12dp"
+            app:elevation="0dp"
+            android:textAppearance="@style/TextAppearance.App.Body"
+            android:textStyle="bold"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

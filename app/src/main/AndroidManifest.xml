@@ -70,6 +70,11 @@
             android:exported="false"
             android:theme="@style/Theme.SoThich" />
 
+        <activity
+            android:name=".ui.CropImageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SoThich" />
+
         <!-- BroadcastReceiver hiển thị thông báo nhắc nhở khi đến giờ (Bước 11) -->
         <receiver
             android:name=".receiver.ReminderReceiver"

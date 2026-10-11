@@ -49,6 +49,11 @@
     <string name="action_take_photo">Chụp ảnh</string>
     <string name="action_choose_gallery">Chọn từ thư viện</string>
     <string name="action_remove_photo">Xóa ảnh</string>
+    <string name="action_adjust_frame">Căn chỉnh lại khung ảnh</string>
+    <string name="title_crop_image">Căn chỉnh khung ảnh</string>
+    <string name="hint_crop_gesture">Kéo để di chuyển, dùng 2 ngón tay để phóng to/thu nhỏ</string>
+    <string name="action_done">Xong</string>
+    <string name="action_rotate">Xoay ảnh</string>
     <string name="label_cover_photo">Ảnh minh họa</string>
     <string name="hint_tap_to_add_photo">Chạm để chụp hoặc chọn ảnh</string>
     <string name="hint_photo_types">Hỗ trợ định dạng JPG, PNG</string>

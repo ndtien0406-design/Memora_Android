@@ -21,6 +21,7 @@ class ImagePickerBottomSheet : BottomSheetDialogFragment() {
     var hasImage: Boolean = false
     var onTakePhotoListener: (() -> Unit)? = null
     var onPickGalleryListener: (() -> Unit)? = null
+    var onAdjustFrameListener: (() -> Unit)? = null
     var onRemovePhotoListener: (() -> Unit)? = null
 
     override fun onCreateView(
@@ -35,7 +36,8 @@ class ImagePickerBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Dòng xóa ảnh chỉ hiện khi đã có ảnh
+        // Dòng căn chỉnh khung và xóa ảnh chỉ hiện khi đã có ảnh
+        binding.btnActionAdjustFrame.visibility = if (hasImage) View.VISIBLE else View.GONE
         binding.btnActionRemovePhoto.visibility = if (hasImage) View.VISIBLE else View.GONE
 
         binding.btnActionCamera.setOnClickListener {
@@ -46,6 +48,11 @@ class ImagePickerBottomSheet : BottomSheetDialogFragment() {
         binding.btnActionGallery.setOnClickListener {
             dismiss()
             onPickGalleryListener?.invoke()
+        }
+
+        binding.btnActionAdjustFrame.setOnClickListener {
+            dismiss()
+            onAdjustFrameListener?.invoke()
         }
 
         binding.btnActionRemovePhoto.setOnClickListener {
