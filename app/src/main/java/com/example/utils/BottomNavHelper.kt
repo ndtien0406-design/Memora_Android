@@ -41,13 +41,13 @@ object BottomNavHelper {
             }
             activity.startActivity(intent)
 
-            // Chuyển tab mượt mà bằng hiệu ứng Fade In/Out thay vì Hard Cut
+            // Chuyển tab mượt mà: Fade + Scale nhẹ (tab_enter / tab_exit)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-                activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, R.anim.tab_fade_in, R.anim.tab_fade_out)
-                activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, R.anim.tab_fade_in, R.anim.tab_fade_out)
+                activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_OPEN, R.anim.tab_enter, R.anim.tab_exit)
+                activity.overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, R.anim.tab_enter, R.anim.tab_exit)
             } else {
                 @Suppress("DEPRECATION")
-                activity.overridePendingTransition(R.anim.tab_fade_in, R.anim.tab_fade_out)
+                activity.overridePendingTransition(R.anim.tab_enter, R.anim.tab_exit)
             }
             false
         }

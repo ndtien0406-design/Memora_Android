@@ -198,34 +198,40 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Trạng thái đã chọn ảnh -->
-                <FrameLayout
+                <!-- Trạng thái đã chọn ảnh (Tỉ lệ chuẩn 4:3) -->
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_selected_image"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
+                    android:layout_height="wrap_content"
                     android:visibility="gone"
                     tools:visibility="gone">
 
                     <ImageView
                         android:id="@+id/iv_selected_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
                         android:scaleType="centerCrop"
-                        android:contentDescription="@string/label_cover_photo" />
+                        android:contentDescription="@string/label_cover_photo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="4:3" />
 
                     <!-- Nút đổi ảnh nổi bo tròn -->
                     <LinearLayout
                         android:id="@+id/btn_change_photo"
                         android:layout_width="wrap_content"
                         android:layout_height="32dp"
-                        android:layout_gravity="bottom|end"
                         android:layout_margin="10dp"
                         android:background="@drawable/bg_chip_selected"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="12dp"
                         android:orientation="horizontal"
                         android:clickable="true"
-                        android:focusable="true">
+                        android:focusable="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
 
                         <ImageView
                             android:layout_width="14dp"
@@ -243,7 +249,7 @@
                             android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
-                </FrameLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- 1. Tên sở thích * & MỤC LỤC #... -->

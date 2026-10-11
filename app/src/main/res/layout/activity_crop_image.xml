@@ -81,6 +81,76 @@
         android:paddingBottom="24dp"
         android:background="@color/color_background">
 
+        <!-- Thanh chọn tỉ lệ khung ảnh: 4:3, 1:1, 16:9, 3:4 -->
+        <LinearLayout
+            android:id="@+id/layout_aspect_ratios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/btn_ratio_4_3"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_chip_selected"
+                android:gravity="center"
+                android:text="@string/ratio_4_3"
+                android:textColor="@color/color_on_accent"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btn_ratio_1_1"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="@string/ratio_1_1"
+                android:textColor="@color/color_text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btn_ratio_16_9"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="2dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="@string/ratio_16_9"
+                android:textColor="@color/color_text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btn_ratio_3_4"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_chip_unselected"
+                android:gravity="center"
+                android:text="@string/ratio_3_4"
+                android:textColor="@color/color_text_primary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

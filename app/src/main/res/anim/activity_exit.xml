@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Activity exit (slide ra trái): translate + fade
+    Dùng fast_out_linear_in (ease-in) để "đi nhanh"
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="-4%"
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:duration="250" />
+
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:duration="250" />
+
+</set>

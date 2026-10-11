@@ -33,7 +33,7 @@
         <item name="fontFamily">@font/svn_gilroy</item>
         <item name="android:fontFamily">@font/svn_gilroy</item>
 
-        <!-- Đồng bộ hiệu ứng chuyển màn hình: Hard Cut toàn bộ -->
-        <item name="android:windowAnimationStyle">@style/Animation.App.HardCut</item>
+        <!-- Activity transitions: tức thì (tab switching xử lý riêng ở BottomNavHelper) -->
+        <item name="android:windowAnimationStyle">@style/Animation.App.NoAnim</item>
     </style>
 </resources>

@@ -89,13 +89,6 @@ class HobbyDetailActivity : AppCompatActivity() {
         binding.btnDetailBack.setOnClickListener {
             finish()
         }
-
-        binding.btnToolbarShare.setOnClickListener {
-            currentHobby?.let { hobby ->
-                ShareBottomSheet.newInstance(hobby)
-                    .show(supportFragmentManager, ShareBottomSheet.TAG)
-            }
-        }
     }
 
     private fun setupListeners() {

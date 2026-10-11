@@ -20,14 +20,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Ảnh lớn phía trên bo tròn theo cạnh trên của Card -->
-        <ImageView
-            android:id="@+id/iv_hobby_image"
+        <!-- Ảnh lớn phía trên bo tròn theo cạnh trên của Card (Tỉ lệ chuẩn 4:3) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_hobby_placeholder" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_hobby_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_hobby_placeholder"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="4:3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Phần thông tin nội dung: Danh mục, Ngày thêm, Tên, Đánh giá sao -->
         <LinearLayout

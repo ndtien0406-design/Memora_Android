@@ -72,6 +72,45 @@ class CropImageActivity : AppCompatActivity() {
         binding.btnCropApply.setOnClickListener {
             saveCroppedImageAsync()
         }
+
+        // Tùy chọn tỉ lệ khung ảnh
+        binding.btnRatio43.setOnClickListener {
+            updateActiveRatioButton(binding.btnRatio43)
+            binding.cropImageView.setAspectRatio(4f / 3f)
+        }
+
+        binding.btnRatio11.setOnClickListener {
+            updateActiveRatioButton(binding.btnRatio11)
+            binding.cropImageView.setAspectRatio(1f)
+        }
+
+        binding.btnRatio169.setOnClickListener {
+            updateActiveRatioButton(binding.btnRatio169)
+            binding.cropImageView.setAspectRatio(16f / 9f)
+        }
+
+        binding.btnRatio34.setOnClickListener {
+            updateActiveRatioButton(binding.btnRatio34)
+            binding.cropImageView.setAspectRatio(3f / 4f)
+        }
+    }
+
+    private fun updateActiveRatioButton(activeBtn: android.widget.TextView) {
+        val ratioButtons = listOf(
+            binding.btnRatio43,
+            binding.btnRatio11,
+            binding.btnRatio169,
+            binding.btnRatio34
+        )
+        for (btn in ratioButtons) {
+            if (btn == activeBtn) {
+                btn.setBackgroundResource(R.drawable.bg_chip_selected)
+                btn.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.color_on_accent))
+            } else {
+                btn.setBackgroundResource(R.drawable.bg_chip_unselected)
+                btn.setTextColor(androidx.core.content.ContextCompat.getColor(this, R.color.color_text_primary))
+            }
+        }
     }
 
     private fun loadImageAsync() {

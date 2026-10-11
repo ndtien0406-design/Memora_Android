@@ -31,9 +31,23 @@ class CropImageView @JvmOverloads constructor(
     private val currentMatrix = Matrix()
     private val matrixValues = FloatArray(9)
 
-    // Khung crop hình chữ nhật (4:3)
+    // Khung crop hình chữ nhật (mặc định 4:3, có thể chuyển sang 1:1, 16:9, 3:4)
     val cropRect = RectF()
-    private val aspectRatio = 4f / 3f
+    private var aspectRatio: Float = 4f / 3f
+
+    fun setAspectRatio(ratio: Float) {
+        if (Math.abs(aspectRatio - ratio) < 0.001f) return
+        aspectRatio = ratio
+        if (width > 0 && height > 0) {
+            calculateCropRect(width, height)
+            if (sourceBitmap != null) {
+                initMatrix()
+            }
+            invalidate()
+        }
+    }
+
+    fun getAspectRatio(): Float = aspectRatio
 
     // Sơn phủ viền mờ bên ngoài
     private val overlayPaint = Paint().apply {
