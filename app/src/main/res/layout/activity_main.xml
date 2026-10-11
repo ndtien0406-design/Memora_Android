@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top App Bar / Header -->
+    <LinearLayout
+        android:id="@+id/toolbar_main"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="18dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_app_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_my_hobbies"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <!-- Khu vực Ô tìm kiếm & Chip danh mục -->
+    <LinearLayout
+        android:id="@+id/layout_search_filter_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Ô tìm kiếm phẳng với viền 1dp bo góc 12dp -->
+        <LinearLayout
+            android:id="@+id/layout_search_input"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_search_bar"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="14dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="@null"
+                app:tint="@color/color_text_secondary" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@null"
+                android:hint="@string/search_hint"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.App.Body"
+                android:textColor="@color/color_text_primary"
+                android:textColorHint="@color/color_text_secondary"
+                android:textSize="13.5sp" />
+
+        </LinearLayout>
+
+        <!-- Hàng chip danh mục dạng viên nhộng (Pill chips) -->
+        <HorizontalScrollView
+            android:id="@+id/scroll_category_chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Chip: Tất cả -->
+                <TextView
+                    android:id="@+id/chip_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_selected"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/category_all"
+                    android:textColor="@color/color_on_accent"
+                    android:textSize="12.5sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- 7 chip danh mục -->
+                <TextView
+                    android:id="@+id/chip_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_music"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_movie"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_books"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_book"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_sports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_sport"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_travel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_travel"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_food"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_food"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/chip_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:text="@string/category_other"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12.5sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Hàng nút chọn sắp xếp (Mới nhất ⌄) căn phải, bỏ nhãn DANH MỤC TRƯNG BÀY theo thiết kế -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Nút Sắp xếp kiểu dropdown viền mảnh 1dp @color/border bo góc 12dp -->
+            <LinearLayout
+                android:id="@+id/btn_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_dropdown_box"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tv_sort_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sort_dropdown_newest"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/ic_keyboard_arrow_down"
+                    android:contentDescription="@null"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView danh sách sở thích (Lưới 2 cột hoặc danh sách) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hobbies"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="84dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/layout_search_filter_header"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Khối trạng thái rỗng (Empty State) theo đúng Image 2 -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layout_empty_state"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layout_search_filter_header"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="36dp">
+
+            <!-- Huy hiệu tròn mềm bọc hình vẽ cuốn sổ -->
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_soft_circle">
+
+                <ImageView
+                    android:id="@+id/iv_empty_illustration"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_empty_book"
+                    android:contentDescription="@null" />
+            </FrameLayout>
+
+            <!-- Tiêu đề: Chưa có sở thích nào -->
+            <TextView
+                android:id="@+id/tv_empty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/empty_title"
+                android:textAppearance="@style/TextAppearance.App.Title"
+                android:textColor="@color/color_text_primary"
+                android:textSize="22sp" />
+
+            <!-- Mô tả phụ -->
+            <TextView
+                android:id="@+id/tv_empty_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/empty_subtitle"
+                android:textAppearance="@style/TextAppearance.App.Caption"
+                android:textColor="@color/color_text_secondary"
+                android:textSize="13.5sp"
+                android:lineSpacingExtra="3dp" />
+
+            <!-- Nút chính: + Thêm sở thích đầu tiên -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_first_hobby"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="22dp"
+                android:paddingHorizontal="24dp"
+                android:text="@string/btn_add_first_hobby"
+                android:textColor="@color/color_on_accent"
+                android:backgroundTint="@color/color_accent"
+                app:cornerRadius="12dp"
+                app:elevation="0dp"
+                android:textAppearance="@style/TextAppearance.App.Body"
+                android:textStyle="bold" />
+
+            <!-- Khối GỢI Ý DANH MỤC theo đúng Image 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="48dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/header_category_suggestions"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.06" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tap_to_try"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+
+            <!-- 2 thẻ gợi ý Sách và Âm nhạc -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <!-- Thẻ Sách -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_suggestion_books"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border"
+                    app:cardBackgroundColor="@color/color_surface_variant">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_book"
+                            android:contentDescription="@null"
+                            app:tint="@color/color_cat_books" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/suggestion_book_title"
+                                android:textAppearance="@style/TextAppearance.App.Body"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/suggestion_book_desc"
+                                android:textAppearance="@style/TextAppearance.App.Caption"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="11sp"
+                                android:singleLine="true"
+                                android:ellipsize="end" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Thẻ Âm nhạc -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_suggestion_music"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/border"
+                    app:cardBackgroundColor="@color/color_surface_variant">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_music"
+                            android:contentDescription="@null"
+                            app:tint="@color/color_cat_music" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/suggestion_music_title"
+                                android:textAppearance="@style/TextAppearance.App.Body"
+                                android:textColor="@color/color_text_primary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/suggestion_music_desc"
+                                android:textAppearance="@style/TextAppearance.App.Caption"
+                                android:textColor="@color/color_text_secondary"
+                                android:textSize="11sp"
+                                android:singleLine="true"
+                                android:ellipsize="end" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Khối Không tìm thấy kết quả tìm kiếm/lọc -->
+    <LinearLayout
+        android:id="@+id/layout_no_search_results"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/layout_search_filter_header"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_no_search_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/color_text_secondary"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/tv_no_search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/empty_search_title"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_no_search_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/empty_search_subtitle"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear_filters"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginTop="18dp"
+            android:paddingHorizontal="20dp"
+            android:text="@string/btn_clear_filters"
+            android:textColor="@color/color_accent"
+            app:strokeColor="@color/color_accent"
+            app:cornerRadius="12dp"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Floating Action Button: Khối bo tròn squircle màu nhấn theo Image 1 -->
+    <FrameLayout
+        android:id="@+id/fab_add"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bg_fab_squircle"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/action_add_hobby"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_add"
+            app:tint="@color/color_on_accent"
+            android:contentDescription="@null" />
+    </FrameLayout>
+
+    <!-- Thanh điều hướng đáy dùng chung (layout_bottom_nav) -->
+    <include
+        android:id="@+id/included_bottom_nav"
+        layout="@layout/layout_bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

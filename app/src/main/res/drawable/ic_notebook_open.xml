@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Open book with spine and pages -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,12C20,10 12,10 6,12v24c6,-2 14,-2 18,0c4,-2 12,-2 18,0V12C36,10 28,10 24,12z" />
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M24,12v24" />
+    <!-- Guidelines on pages -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M10,18h3 M15,18h3 M20,18h2 M26,18h2 M30,18h3 M35,18h3" />
+    <!-- Bookmark ribbon hanging from bottom center -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M23,34v8l2,-2l2,2v-8" />
+</vector>

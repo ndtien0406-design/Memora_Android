@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 3 lớp màu TÁCH BIỆT (Light Mode) -->
+    <!-- 1. Nền màn hình: #FAF7F2 -->
+    <color name="background">#FAF7F2</color>
+    <color name="color_background">#FAF7F2</color>
+
+    <!-- 2. Nền thẻ, ô nhập, bottom sheet: #FFFFFF -->
+    <color name="surface">#FFFFFF</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_surface_variant">#F5EFEB</color>
+
+    <!-- 3. Viền 1dp: #E6DED3 -->
+    <color name="border">#E6DED3</color>
+    <color name="color_border">#E6DED3</color>
+
+    <!-- Chữ chính và chữ phụ (#7A7068) -->
+    <color name="color_text_primary">#2B2623</color>
+    <color name="text_secondary">#7A7068</color>
+    <color name="color_text_secondary">#7A7068</color>
+
+    <!-- Màu nhấn duy nhất: #B5543A -->
+    <color name="accent">#B5543A</color>
+    <color name="color_accent">#B5543A</color>
+    <color name="color_accent_hover">#953D25</color>
+    <color name="color_on_accent">#FFFFFF</color>
+
+    <!-- Vùng ảnh trống nền trung tính #F1EBE4 -->
+    <color name="placeholder_bg">#F1EBE4</color>
+
+    <!-- Active indicator bottom nav nền nhạt #F3E3DC -->
+    <color name="nav_active_indicator">#F3E3DC</color>
+
+    <!-- Sao đánh giá -->
+    <color name="color_star">#E0A030</color>
+
+    <!-- Semantic helper colors -->
+    <color name="color_error">#BA1A1A</color>
+    <color name="color_error_container">#FFDAD6</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Harmonious Category Colors -->
+    <color name="color_cat_music">#D07A1E</color>
+    <color name="color_cat_movies">#0B7C80</color>
+    <color name="color_cat_books">#B5543A</color>
+    <color name="color_cat_sports">#2C64D8</color>
+    <color name="color_cat_travel">#0E9254</color>
+    <color name="color_cat_food">#D92348</color>
+    <color name="color_cat_other">#847B77</color>
+</resources>

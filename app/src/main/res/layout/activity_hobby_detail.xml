@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar: Tiêu đề "Sở thích" font serif và nút 3 chấm theo Image 4 -->
+    <LinearLayout
+        android:id="@+id/header_detail_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="18dp"
+        android:background="@color/color_background">
+
+        <!-- Giữ toolbar_detail ẩn để tương thích code sẵn có nếu cần -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_detail_top_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/title_hobby"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/btn_detail_more"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_info"
+            android:src="@drawable/ic_more_vert"
+            app:tint="@color/color_text_primary" />
+    </LinearLayout>
+
+    <!-- Nội dung cuộn -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="18dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="36dp">
+
+            <!-- Card ảnh lớn với 2 nút tròn nổi Back và Share theo Image 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border"
+                app:cardBackgroundColor="@color/color_surface">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_detail_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_hobby_placeholder" />
+
+                    <!-- Nút tròn Back nổi góc trên bên trái -->
+                    <ImageButton
+                        android:id="@+id/btn_detail_back"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|start"
+                        android:layout_margin="12dp"
+                        android:background="@drawable/bg_circle_overlay"
+                        android:contentDescription="@string/action_back"
+                        android:src="@drawable/ic_arrow_back"
+                        app:tint="@color/color_text_primary" />
+
+                    <!-- Nút tròn Chia sẻ nổi góc trên bên phải (giữ id btn_toolbar_share) -->
+                    <ImageButton
+                        android:id="@+id/btn_toolbar_share"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="top|end"
+                        android:layout_margin="12dp"
+                        android:background="@drawable/bg_circle_overlay"
+                        android:contentDescription="@string/action_share"
+                        android:src="@drawable/ic_share"
+                        app:tint="@color/color_text_primary" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Hàng thông tin dưới ảnh: Danh mục (Pill chip) bên trái & Thêm ngày bên phải -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="14dp">
+
+                <TextView
+                    android:id="@+id/tv_detail_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingHorizontal="14dp"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="Khác" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_detail_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="12sp"
+                    tools:text="Thêm ngày 02/05/2026" />
+            </LinearLayout>
+
+            <!-- Tên sở thích (Fraunces serif bold 22sp) -->
+            <TextView
+                android:id="@+id/tv_detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.App.Title"
+                android:textColor="@color/color_text_primary"
+                android:textSize="23sp"
+                tools:text="Leica M6 Classic" />
+
+            <!-- Hàng đánh giá sao & số điểm 5.0 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+
+                <RatingBar
+                    android:id="@+id/rating_bar_detail"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="1.0"
+                    android:progressTint="@color/color_star"
+                    android:secondaryProgressTint="@color/color_star"
+                    tools:rating="5" />
+
+                <TextView
+                    android:id="@+id/tv_detail_rating_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_primary"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    tools:text="5.0" />
+            </LinearLayout>
+
+            <!-- Card Ghi chú lớn phẳng viền 1dp theo Image 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border"
+                app:cardBackgroundColor="@color/color_surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Tiêu đề Ghi chú với icon -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_edit"
+                            app:tint="@color/color_accent"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/label_note"
+                            android:textAppearance="@style/TextAppearance.App.Body"
+                            android:textColor="@color/color_text_primary"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Nội dung Ghi chú -->
+                    <TextView
+                        android:id="@+id/tv_detail_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@color/color_text_primary"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="5dp"
+                        tools:text="Tìm thấy chiếc M6 này tại một tiệm máy ảnh cơ cũ nép mình bên con dốc Heidelberg trong chuyến đi đầu mùa thu. Vỏ kim loại đã ngả chút màu đồng thau theo năm tháng ở viền góc trên…" />
+
+                    <!-- Trình phát âm thanh (Bước 10) - Chỉ hiện khi có audioPath -->
+                    <LinearLayout
+                        android:id="@+id/layout_audio_player"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_audio_container"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="12dp"
+                        android:layout_marginTop="14dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/btn_detail_play_audio"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_circle_play"
+                            android:src="@drawable/ic_play_arrow"
+                            android:contentDescription="Phát ghi âm"
+                            app:tint="@color/color_on_accent" />
+
+                        <SeekBar
+                            android:id="@+id/seekbar_detail_audio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:progressTint="@color/color_accent"
+                            android:thumbTint="@color/color_accent" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_audio_duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/initial_audio_duration"
+                            android:textAppearance="@style/TextAppearance.App.Caption"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="12sp"
+                            tools:text="00:23" />
+                    </LinearLayout>
+
+                    <!-- Dòng nhắc nhở (Bước 11) - Chỉ hiện khi có reminderTime còn hiệu lực -->
+                    <LinearLayout
+                        android:id="@+id/layout_reminder_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/ic_notifications"
+                            android:contentDescription="@null"
+                            app:tint="@color/color_text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tv_detail_reminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:textAppearance="@style/TextAppearance.App.Caption"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="12sp"
+                            tools:text="Nhắc lúc 20:00, 02/10/2026" />
+                    </LinearLayout>
+
+                    <!-- Dòng chân thẻ ghi chú (Ghi chú bổ sung / hashtag theo Image 4) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="14dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cuộn phim hiện tại: Kodak Tri-X 400"
+                            android:textAppearance="@style/TextAppearance.App.Caption"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="11sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#KhungHinh24"
+                            android:textAppearance="@style/TextAppearance.App.Caption"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Hàng nút Sửa và Xóa theo Image 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="24dp">
+
+                <!-- Nút Sửa: Hộp viền 1dp bo góc 12dp màu nhã nhặn -->
+                <LinearLayout
+                    android:id="@+id/btn_edit_hobby"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_search_bar"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_edit"
+                        app:tint="@color/color_text_primary"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/btn_edit"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@color/color_text_primary"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- Nút Xóa: Text icon đỏ/terracotta nhã nhặn -->
+                <LinearLayout
+                    android:id="@+id/btn_delete_hobby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="14dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_delete"
+                        app:tint="@color/color_error"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/btn_delete"
+                        android:textAppearance="@style/TextAppearance.App.Body"
+                        android:textColor="@color/color_error"
+                        android:textSize="13.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

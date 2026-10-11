@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme for Dark mode -->
+    <style name="Theme.SoThich" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Palette Colors (Dark: Nền #1A1715, Thẻ #24201D, Viền #3A342F) -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/color_surface_variant</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@color/color_on_accent</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/color_on_accent</item>
+        <item name="colorSecondaryContainer">@color/nav_active_indicator</item>
+        <item name="colorOnSecondaryContainer">@color/accent</item>
+        <item name="colorOutline">@color/border</item>
+        <item name="colorOutlineVariant">@color/border</item>
+        <item name="android:textColorPrimary">@color/color_text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <!-- System Bars: Dark background, dark status bar icons (windowLight = false) -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Flat UI: No drop shadows or skeuomorphic elevations -->
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+
+        <!-- Default Font: SVN-Gilroy -->
+        <item name="fontFamily">@font/svn_gilroy</item>
+        <item name="android:fontFamily">@font/svn_gilroy</item>
+
+        <!-- Đồng bộ hiệu ứng chuyển màn hình: Hard Cut toàn bộ -->
+        <item name="android:windowAnimationStyle">@style/Animation.App.HardCut</item>
+    </style>
+</resources>

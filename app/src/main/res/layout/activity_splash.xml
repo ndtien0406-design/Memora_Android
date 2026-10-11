@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Khối trung tâm: Icon quyển sổ mở màu nhấn, Tên app, Slogan -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout_splash_footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.48">
+
+        <!-- Icon quyển sổ mở màu nhấn có ruy băng -->
+        <ImageView
+            android:id="@+id/iv_splash_logo"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:src="@drawable/ic_notebook_open"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Tên ứng dụng font serif sang trọng -->
+        <TextView
+            android:id="@+id/tv_splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <!-- Câu châm ngôn mô tả -->
+        <TextView
+            android:id="@+id/tv_splash_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/splash_subtitle"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Khối chân trang: Gạch ngang, Mục lục cá nhân, Phiên bản 2.4 -->
+    <LinearLayout
+        android:id="@+id/layout_splash_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/border" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_footer_catalog"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="10.5sp"
+            android:letterSpacing="0.08" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/splash_footer_version"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="10.5sp"
+            android:letterSpacing="0.08" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Chấm tròn màu danh mục (8dp) -->
+        <View
+            android:id="@+id/view_category_color"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/bg_color_dot" />
+
+        <!-- Tên danh mục -->
+        <TextView
+            android:id="@+id/tv_category_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:textAppearance="@style/TextAppearance.App.Body"
+            android:textColor="@color/color_text_primary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            tools:text="Âm nhạc" />
+
+        <!-- Số lượng sở thích (e.g. "5 sở thích") -->
+        <TextView
+            android:id="@+id/tv_category_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="13sp"
+            tools:text="5 sở thích" />
+
+        <!-- Tỷ lệ phần trăm (e.g. "20.8%") -->
+        <TextView
+            android:id="@+id/tv_category_percentage"
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textAppearance="@style/TextAppearance.App.Body"
+            android:textColor="@color/color_text_primary"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            tools:text="20.8%" />
+    </LinearLayout>
+
+    <!-- Thanh tỷ lệ mỏng bo góc bên dưới (4dp) -->
+    <ProgressBar
+        android:id="@+id/progress_category_ratio"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="6dp"
+        android:max="1000"
+        android:progress="208"
+        android:progressTint="@color/color_cat_music"
+        android:progressBackgroundTint="@color/color_surface_variant" />
+
+</LinearLayout>

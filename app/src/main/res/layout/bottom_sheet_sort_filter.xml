@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_surface"
+    android:paddingTop="12dp"
+    android:paddingBottom="24dp">
+
+    <!-- Thanh kéo BottomSheet -->
+    <View
+        android:layout_width="36dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_bottom_sheet_drag_handle" />
+
+    <!-- Tiêu đề Sắp xếp và lọc -->
+    <TextView
+        android:id="@+id/tv_sort_filter_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="12dp"
+        android:text="@string/title_sort_and_filter"
+        android:textAppearance="@style/TextAppearance.App.Title"
+        android:textColor="@color/color_text_primary"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="450dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp">
+
+            <!-- 1. Tiêu đề: SẮP XẾP THEO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/header_sort_by"
+                android:textAppearance="@style/TextAppearance.App.Caption"
+                android:textColor="@color/color_text_secondary"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:textSize="11sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_sort_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_sort_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="@string/sort_date_desc"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/color_accent" />
+
+                <RadioButton
+                    android:id="@+id/rb_sort_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="@string/sort_rating_desc"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/color_accent" />
+
+                <RadioButton
+                    android:id="@+id/rb_sort_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="@string/sort_name_az"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="14sp"
+                    android:buttonTint="@color/color_accent" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="14dp"
+                android:background="@color/border" />
+
+            <!-- 2. Tiêu đề: DANH MỤC -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/header_filter_category"
+                android:textAppearance="@style/TextAppearance.App.Caption"
+                android:textColor="@color/color_text_secondary"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:textSize="11sp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_dialog_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:singleSelection="true"
+                app:selectionRequired="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_all"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_all"
+                    android:checked="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_music"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_music" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_movies"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_movie" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_books"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_book" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_sports"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_sport" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_travel"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_travel" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_food"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_food" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_dialog_other"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_other" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Hàng nút Đặt lại và Áp dụng -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="24dp">
+
+                <!-- Nút Đặt lại -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_filter_reset"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/btn_reset"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="15sp" />
+
+                <!-- Nút Áp dụng -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_filter_apply"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1.3"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/btn_apply"
+                    android:textColor="@color/color_on_accent"
+                    android:backgroundTint="@color/color_accent"
+                    app:cornerRadius="12dp"
+                    app:elevation="0dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_hobby"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/border"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/surface"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Ảnh lớn phía trên bo tròn theo cạnh trên của Card -->
+        <ImageView
+            android:id="@+id/iv_hobby_image"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_hobby_placeholder" />
+
+        <!-- Phần thông tin nội dung: Danh mục, Ngày thêm, Tên, Đánh giá sao -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp">
+
+            <!-- Hàng 1: Danh mục bên trái & Ngày thêm bên phải (chữ phụ @color/text_secondary, 12sp) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_hobby_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    tools:text="Sách" />
+
+                <TextView
+                    android:id="@+id/tv_hobby_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Caption"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    tools:text="15/03/2026" />
+            </LinearLayout>
+
+            <!-- Hàng 2: Tên sở thích (Fraunces serif bold 16sp) -->
+            <TextView
+                android:id="@+id/tv_hobby_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.App.TitleCard"
+                android:textColor="@color/color_text_primary"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="Rừng Na Uy" />
+
+            <!-- Hàng 3: 5 sao đánh giá vàng nhỏ -->
+            <RatingBar
+                android:id="@+id/rating_bar_hobby"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:progressTint="@color/color_star"
+                android:secondaryProgressTint="@color/color_star"
+                tools:rating="5" />
+
+            <!-- BỎ dòng ghi chú khỏi thẻ (giữ view ẩn để không lỗi id ViewBinding) -->
+            <TextView
+                android:id="@+id/tv_hobby_note"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

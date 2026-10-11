@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Triangle on top -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="1.8"
+        android:pathData="M12,3L7,11h10z" />
+    <!-- Square on bottom left -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="1.8"
+        android:pathData="M4,15h6v6h-6z" />
+    <!-- Circle on bottom right -->
+    <path
+        android:strokeColor="@color/color_accent"
+        android:strokeWidth="1.8"
+        android:pathData="M17,14A4,4 0 1,0 21,18A4,4 0 0,0 17,14z" />
+</vector>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/svn_gilroy_regular"
+        app:fontStyle="normal"
+        app:fontWeight="400"
+        app:font="@font/svn_gilroy_regular" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        android:font="@font/svn_gilroy_medium"
+        app:fontStyle="normal"
+        app:fontWeight="500"
+        app:font="@font/svn_gilroy_medium" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="600"
+        android:font="@font/svn_gilroy_semibold"
+        app:fontStyle="normal"
+        app:fontWeight="600"
+        app:font="@font/svn_gilroy_semibold" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/svn_gilroy_bold"
+        app:fontStyle="normal"
+        app:fontWeight="700"
+        app:font="@font/svn_gilroy_bold" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="800"
+        android:font="@font/svn_gilroy_heavy"
+        app:fontStyle="normal"
+        app:fontWeight="800"
+        app:font="@font/svn_gilroy_heavy" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="900"
+        android:font="@font/svn_gilroy_black"
+        app:fontStyle="normal"
+        app:fontWeight="900"
+        app:font="@font/svn_gilroy_black" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="700"
+        android:font="@font/svn_gilroy_bold_italic"
+        app:fontStyle="italic"
+        app:fontWeight="700"
+        app:font="@font/svn_gilroy_bold_italic" />
+    <font
+        android:fontStyle="italic"
+        android:fontWeight="900"
+        android:font="@font/svn_gilroy_black_italic"
+        app:fontStyle="italic"
+        app:fontWeight="900"
+        app:font="@font/svn_gilroy_black_italic" />
+</font-family>

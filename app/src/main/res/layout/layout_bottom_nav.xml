@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_bottom_nav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface"
+    android:orientation="vertical">
+
+    <!-- Hairline Divider above Bottom Navigation: 1dp @color/border -->
+    <View
+        android:id="@+id/divider_nav"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border" />
+
+    <!-- Bottom Navigation Bar (Sở thích | Thống kê | Cài đặt) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="@color/surface"
+        app:elevation="0dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:itemIconSize="28dp"
+        app:itemActiveIndicatorStyle="@style/Widget.App.BottomNav.ActiveIndicator"
+        app:itemPaddingTop="9dp"
+        app:itemPaddingBottom="11dp"
+        app:itemTextAppearanceActive="@style/TextAppearance.App.BottomNav.Active"
+        app:itemTextAppearanceInactive="@style/TextAppearance.App.BottomNav"
+        app:itemRippleColor="@color/nav_active_indicator"
+        app:labelVisibilityMode="labeled"
+        app:paddingBottomSystemWindowInsets="false"
+        app:paddingTopSystemWindowInsets="false" />
+
+</LinearLayout>

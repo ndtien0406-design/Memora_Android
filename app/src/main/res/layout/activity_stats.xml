@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stats_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Bar: Tiêu đề Thống kê (serif lớn) và 2 icon Chia sẻ + Thông tin -->
+    <LinearLayout
+        android:id="@+id/header_stats_bar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_stats_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/title_stats"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="26sp" />
+
+        <!-- Icon Chia sẻ (hộp mũi tên lên) -->
+        <ImageButton
+            android:id="@+id/btn_stats_share"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_share"
+            android:src="@drawable/ic_share_box"
+            app:tint="@color/color_text_primary" />
+    </LinearLayout>
+
+    <!-- Khối trạng thái rỗng khi chưa có dữ liệu -->
+    <LinearLayout
+        android:id="@+id/layout_empty_stats"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/header_stats_bar"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_empty_book"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/empty_stats_title"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:textColor="@color/color_text_primary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/empty_stats_desc"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="13sp"
+            android:lineSpacingExtra="3dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_stats_add_hobby"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="24dp"
+            android:text="@string/action_add_hobby"
+            android:textColor="@color/color_on_accent"
+            android:backgroundTint="@color/color_accent"
+            app:cornerRadius="12dp"
+            app:elevation="0dp"
+            android:textAppearance="@style/TextAppearance.App.Body"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Nội dung cuộn thống kê khi có dữ liệu -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_stats_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/header_stats_bar"
+        app:layout_constraintBottom_toTopOf="@id/included_bottom_nav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="24dp">
+
+            <!-- Nút phân đoạn chuyển đổi "Tròn | Cột" (viền thuốc mềm) -->
+            <LinearLayout
+                android:id="@+id/layout_segmented_control"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_segmented_container"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/btn_segment_pie"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_segmented_selected"
+                    android:gravity="center"
+                    android:text="@string/chart_type_pie"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_on_accent"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/btn_segment_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/chart_type_bar"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Card 1: Khung chứa biểu đồ Donut / BarChart -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border"
+                app:cardBackgroundColor="@color/color_surface">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <!-- Biểu đồ tròn dạng Donut (PieChart) -->
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pie_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!-- Biểu đồ cột (BarChart) -->
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bar_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Danh sách Phân bố danh mục -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border"
+                app:cardBackgroundColor="@color/color_surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="12dp">
+
+                    <!-- Hàng tiêu đề Card: Icon + "Phân bố danh mục" + Badge "7 Danh mục" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_category_shapes"
+                            android:contentDescription="@null" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/header_category_distribution"
+                            android:textAppearance="@style/TextAppearance.App.Title"
+                            android:textColor="@color/color_text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_category_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_pill_badge"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="@string/category_count_badge"
+                            android:textAppearance="@style/TextAppearance.App.Caption"
+                            android:textColor="@color/color_text_secondary"
+                            android:textSize="12sp"
+                            tools:text="7 Danh mục" />
+                    </LinearLayout>
+
+                    <!-- Đường kẻ chia nhẹ -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@color/border" />
+
+                    <!-- Danh sách các danh mục kèm thanh tỷ lệ mỏng -->
+                    <LinearLayout
+                        android:id="@+id/layout_category_breakdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Thanh điều hướng đáy dùng chung (layout_bottom_nav) -->
+    <include
+        android:id="@+id/included_bottom_nav"
+        layout="@layout/layout_bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

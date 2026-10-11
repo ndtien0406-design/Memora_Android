@@ -1,0 +1,6 @@
+{
+  "name": "Sở Thích",
+  "description": "Ứng dụng quản lý sở thích cá nhân theo phong cách sổ tay giám tuyển, hỗ trợ phân loại, đánh giá và thống kê.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

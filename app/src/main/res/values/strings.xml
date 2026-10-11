@@ -1,0 +1,234 @@
+<resources>
+    <string name="app_name">Memora</string>
+    <string name="title_my_hobbies">Sở thích của tôi</string>
+    <string name="subtitle_hobbies_count">(%1$d sở thích)</string>
+    <string name="items_count">%1$d mục</string>
+    <string name="category_all">Tất cả</string>
+    <string name="sort_label">Sắp xếp</string>
+    <string name="action_add_hobby">Thêm sở thích</string>
+
+    <!-- Add / Edit Hobby -->
+    <string name="title_add_hobby">Thêm sở thích</string>
+    <string name="title_edit_hobby">Sửa sở thích</string>
+    <string name="label_hobby_name">Tên sở thích</string>
+    <string name="hint_hobby_name">Ví dụ: Đọc sách, Chạy bộ…</string>
+    <string name="label_category">Danh mục</string>
+    <string name="label_rating">Đánh giá mức độ yêu thích</string>
+    <string name="rating_format">%1$d / 5 sao</string>
+    <string name="label_note">Ghi chú &amp; cảm nhận</string>
+    <string name="hint_note">Viết đôi dòng cảm nghĩ, kỷ niệm về sở thích này…</string>
+    <string name="btn_save">Lưu</string>
+    <string name="btn_cancel">Hủy</string>
+    <string name="error_name_required">Vui lòng nhập tên sở thích</string>
+    <string name="error_rating_min">Đánh giá phải từ 1 sao trở lên</string>
+    <string name="msg_add_success">Đã thêm sở thích mới thành công</string>
+    <string name="msg_update_success">Đã cập nhật sở thích thành công</string>
+    <string name="placeholder_media_section">Ghi âm và nhắc nhở sẽ có ở các bước tiếp theo</string>
+    <string name="action_back">Quay lại</string>
+
+    <!-- Hobby Detail & Delete & Share -->
+    <string name="title_hobby_detail">Chi tiết</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="added_date_format">Thêm ngày %1$s</string>
+    <string name="btn_edit">Sửa</string>
+    <string name="btn_delete">Xóa</string>
+    <string name="dialog_delete_title">Xóa sở thích này?</string>
+    <string name="dialog_delete_message">Ảnh và ghi chú sẽ bị xóa vĩnh viễn, không thể khôi phục.</string>
+    <string name="dialog_title_share">Chia sẻ sở thích</string>
+    <string name="switch_include_image">Kèm ảnh</string>
+    <string name="switch_include_note">Kèm ghi chú</string>
+    <string name="header_content_to_send">NỘI DUNG SẼ GỬI</string>
+    <string name="share_format_category">Danh mục: %1$s</string>
+    <string name="share_format_rating">Đánh giá: %1$d/5 sao</string>
+    <string name="share_format_note">Ghi chú: %1$s</string>
+    <string name="share_via">Chia sẻ sở thích qua</string>
+    <string name="msg_delete_success">Đã xóa sở thích</string>
+
+    <!-- Image Picker & Camera -->
+    <string name="dialog_title_add_photo">Thêm ảnh</string>
+    <string name="action_take_photo">Chụp ảnh</string>
+    <string name="action_choose_gallery">Chọn từ thư viện</string>
+    <string name="action_remove_photo">Xóa ảnh</string>
+    <string name="label_cover_photo">Ảnh minh họa</string>
+    <string name="hint_tap_to_add_photo">Chạm để chụp hoặc chọn ảnh</string>
+    <string name="hint_photo_types">Hỗ trợ định dạng JPG, PNG</string>
+    <string name="dialog_title_camera_permission">Cho phép truy cập máy ảnh</string>
+    <string name="dialog_msg_camera_permission">Ứng dụng cần quyền sử dụng máy ảnh để chụp ảnh minh họa cho sở thích của bạn.</string>
+    <string name="btn_permission_allow">Cho phép</string>
+    <string name="btn_permission_later">Để sau</string>
+    <string name="msg_camera_permission_denied">Quyền truy cập máy ảnh bị từ chối. Bạn vẫn có thể chọn ảnh từ thư viện.</string>
+    <string name="msg_photo_saved">Đã cập nhật ảnh sở thích</string>
+    <string name="msg_photo_removed">Đã xóa ảnh</string>
+
+    <!-- Search bar -->
+    <string name="search_hint">Tìm kiếm sở thích, danh mục, ghi chú…</string>
+    <string name="action_search">Tìm kiếm</string>
+    <string name="action_filter">Bộ lọc</string>
+    <string name="action_view_mode">Dạng xem</string>
+
+    <!-- Empty state -->
+    <string name="empty_title">Chưa có sở thích nào</string>
+    <string name="empty_subtitle">Bắt đầu lưu những điều bạn yêu thích: bài hát, cuốn sách, chuyến đi…</string>
+    <string name="btn_add_first_hobby">＋ Thêm sở thích đầu tiên</string>
+    <string name="empty_search_title">Không tìm thấy kết quả</string>
+    <string name="empty_search_subtitle">Thử từ khóa khác hoặc chọn một danh mục</string>
+    <string name="btn_clear_filters">Xóa bộ lọc</string>
+
+    <!-- Sort & Filter BottomSheet -->
+    <string name="title_sort_and_filter">Sắp xếp và lọc</string>
+    <string name="header_sort_by">SẮP XẾP THEO</string>
+    <string name="sort_name_az">Tên (A-Z)</string>
+    <string name="sort_rating_desc">Đánh giá (cao đến thấp)</string>
+    <string name="sort_date_desc">Ngày thêm (mới nhất)</string>
+    <string name="header_filter_category">DANH MỤC</string>
+    <string name="btn_reset">Đặt lại</string>
+    <string name="btn_apply">Áp dụng</string>
+
+    <!-- Stats Screen (Step 7) -->
+    <string name="title_stats">Thống kê</string>
+    <string name="chart_type_pie">Tròn</string>
+    <string name="chart_type_bar">Cột</string>
+    <string name="stats_total_format">Tổng số\n%1$d</string>
+    <string name="total_hobbies_label">Tổng số sở thích</string>
+    <string name="header_category_distribution">Phân bố danh mục</string>
+    <string name="header_category_breakdown">PHÂN BỐ THEO DANH MỤC</string>
+    <string name="category_count_badge">%1$d Danh mục</string>
+    <string name="empty_stats_title">Chưa có dữ liệu thống kê</string>
+    <string name="empty_stats_desc">Hãy thêm các sở thích để xem biểu đồ phân bố và tỷ lệ danh mục.</string>
+    <string name="category_item_stat_format">%1$d mục (%2$d%%)</string>
+    <string name="hobbies_count_format">%1$d sở thích</string>
+    <string name="action_open_stats">Thống kê</string>
+    <string name="action_info">Thông tin</string>
+    <string name="msg_stats_info">Biểu đồ thống kê số lượng sở thích theo từng danh mục đã lưu.</string>
+
+    <!-- Splash Screen (Step 8) -->
+    <string name="splash_subtitle">Lưu giữ điều bạn yêu thích</string>
+    <string name="splash_footer_catalog">MỤC LỤC CÁ NHÂN</string>
+    <string name="splash_footer_version">PHIÊN BẢN 2.4</string>
+
+    <!-- Settings Screen (Step 8) -->
+    <string name="title_settings">Cài đặt</string>
+    <string name="header_app_customization">TÙY BIẾN ỨNG DỤNG</string>
+    <string name="title_display_options">Tùy chọn hiển thị</string>
+    <string name="desc_display_options">Hiệu chỉnh cách hiển thị và sắp xếp các sở thích cá nhân</string>
+    <string name="label_theme">Giao diện</string>
+    <string name="desc_theme">Lựa chọn tông màu hiển thị theo sở thích đọc &amp; ghi chép</string>
+    <string name="theme_light">Sáng</string>
+    <string name="theme_dark">Tối</string>
+    <string name="theme_system">Hệ thống</string>
+    <string name="label_default_sort">Sắp xếp mặc định</string>
+    <string name="desc_default_sort">Thứ tự sắp đặt các sở thích trong danh mục &amp; trang chủ</string>
+    <string name="sort_option_name">Tên A–Z</string>
+    <string name="sort_option_name_desc">Xếp theo thứ tự bảng chữ cái của sở thích</string>
+    <string name="sort_option_rating">Đánh giá</string>
+    <string name="sort_option_rating_desc">Ưu tiên các sở thích tâm đắc 5 sao lên đầu</string>
+    <string name="sort_option_date">Ngày thêm</string>
+    <string name="sort_option_date_desc">Hiển thị các sở thích mới thêm gần nhất</string>
+    <string name="label_language">Ngôn ngữ</string>
+    <string name="desc_language">Lựa chọn ngôn ngữ hiển thị trong ứng dụng</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_vietnamese_desc">Mặc định hệ thống</string>
+    <string name="lang_english">English</string>
+    <string name="lang_english_desc">Tiếng Anh</string>
+    <string name="settings_footer_credit">SỞ THÍCH • SỔ TAY GIÁM TUYỂN CÁ NHÂN</string>
+    <string name="header_category_suggestions">GỢI Ý DANH MỤC</string>
+    <string name="tap_to_try">Chạm để thử</string>
+    <string name="suggestion_book_title">Sách</string>
+    <string name="suggestion_book_desc">Trích dẫn &amp; cảm xúc</string>
+    <string name="suggestion_music_title">Âm nhạc</string>
+    <string name="suggestion_music_desc">Bản nhạc buổi chiều</string>
+
+    <!-- Voice Note / Audio Recording (Step 10) -->
+    <string name="label_voice_note">Ghi chú bằng giọng nói</string>
+    <string name="btn_tap_to_record">Bấm để ghi âm</string>
+    <string name="recording_format">Đang ghi %1$s</string>
+    <string name="btn_stop_recording">Dừng</string>
+    <string name="msg_record_permission_denied">Quyền ghi âm bị từ chối. Bạn không thể ghi âm ghi chú.</string>
+    <string name="msg_record_permission_rationale">Ứng dụng cần quyền sử dụng micrô để ghi âm ghi chú giọng nói.</string>
+    <string name="msg_recording_error">Không thể khởi động bộ ghi âm</string>
+    <string name="msg_playback_error">Không thể phát tệp ghi âm</string>
+    <string name="msg_audio_deleted">Đã xóa bản ghi âm</string>
+    <string name="action_delete_audio">Xóa bản ghi âm</string>
+    <string name="initial_audio_duration">00:00</string>
+
+    <!-- Reminder Notifications (Step 11) -->
+    <string name="label_reminder">Nhắc nhở</string>
+    <string name="desc_reminder">Nhận thông báo định kỳ về sở thích này</string>
+    <string name="label_reminder_date">Ngày nhắc</string>
+    <string name="label_reminder_time">Giờ nhắc</string>
+    <string name="title_pick_time">Chọn giờ nhắc</string>
+    <string name="btn_pick_time_positive">Chọn</string>
+    <string name="btn_pick_time_negative">Hủy</string>
+    <string name="error_reminder_past">Thời điểm nhắc nhở phải ở tương lai</string>
+    <string name="msg_notification_permission_denied">Quyền thông báo bị từ chối. Nhắc nhở sẽ không hiển thị trên thanh thông báo.</string>
+    <string name="reminder_notification_title">Sở Thích</string>
+    <string name="reminder_notification_content_format">Đến giờ: %1$s</string>
+    <string name="reminder_detail_format">Nhắc lúc %1$s, %2$s</string>
+    <string name="channel_reminders_name">Nhắc nhở sở thích</string>
+    <string name="channel_reminders_desc">Kênh thông báo nhắc nhở định kỳ về các sở thích</string>
+    <string name="title_pick_date">Chọn ngày nhắc</string>
+
+    <!-- Additional UI & Error strings (Step 12) -->
+    <string name="action_change_photo">Đổi ảnh</string>
+    <string name="detail_rating_format">%1$d/5 sao</string>
+    <string name="detail_no_notes">(Chưa có ghi chú cho sở thích này)</string>
+    <string name="btn_understood">Đã hiểu</string>
+    <string name="btn_close">Đóng</string>
+    <string name="about_dialog_message">Sở Thích • Sổ tay giám tuyển cá nhân\nPhiên bản 2.4</string>
+    <string name="stats_share_format">Thống kê sở thích của tôi: Tổng số %1$d sở thích trên ứng dụng Sở Thích!</string>
+    <string name="error_cannot_open_camera">Không thể mở máy ảnh</string>
+    <string name="error_cannot_read_gallery">Không thể đọc ảnh từ thư viện</string>
+    <string name="error_hobby_not_found">Không tìm thấy sở thích cần sửa</string>
+    <string name="error_cannot_update_hobby">Không thể cập nhật sở thích</string>
+    <string name="error_cannot_add_hobby">Không thể thêm sở thích</string>
+    <string name="error_cannot_delete_hobby">Không thể xóa sở thích</string>
+
+    <!-- Specific UI strings matching screenshots -->
+    <string name="header_display_catalog">DANH MỤC TRƯNG BÀY</string>
+    <string name="sort_dropdown_newest">Mới nhất</string>
+    <string name="title_add_photo_memory">Thêm hình ảnh kỷ niệm</string>
+    <string name="desc_add_photo_memory">Lưu giữ bìa sách, đĩa nhạc, cuộn phim hoặc khoảnh khắc quý giá</string>
+    <string name="label_category_storage">Danh mục lưu trữ</string>
+    <string name="label_rating_feeling">Cảm nhận đánh giá</string>
+    <string name="rating_excellent_review">%1$d/5 sao – Tuyệt tác cá nhân</string>
+    <string name="label_notes_page">Trang ghi chép</string>
+    <string name="btn_save_to_library">Lưu vào thư viện</string>
+    <string name="btn_cancel_save">Hủy lưu</string>
+    <string name="reminder_repeat_weekly">Hàng tuần vào Thứ Sáu</string>
+    <string name="action_change">Thay đổi</string>
+    <string name="title_hobby">Sở thích</string>
+    <string name="catalog_index_format">MỤC LỤC #%1$03d</string>
+
+    <!-- Navigation -->
+    <string name="nav_hobbies">Sở thích</string>
+    <string name="nav_stats">Thống kê</string>
+    <string name="nav_settings">Cài đặt</string>
+
+    <!-- 7 danh mục cố định theo thứ tự SPEC -->
+    <string name="category_music">Âm nhạc</string>
+    <string name="category_movie">Phim ảnh</string>
+    <string name="category_book">Sách</string>
+    <string name="category_sport">Thể thao</string>
+    <string name="category_travel">Du lịch</string>
+    <string name="category_food">Ẩm thực</string>
+    <string name="category_other">Khác</string>
+
+    <string-array name="category_array">
+        <item>@string/category_music</item>
+        <item>@string/category_movie</item>
+        <item>@string/category_book</item>
+        <item>@string/category_sport</item>
+        <item>@string/category_travel</item>
+        <item>@string/category_food</item>
+        <item>@string/category_other</item>
+    </string-array>
+    <string name="title_select_weekly_day">Chọn ngày nhắc hàng tuần</string>
+    <string name="day_monday">Thứ Hai</string>
+    <string name="day_tuesday">Thứ Ba</string>
+    <string name="day_wednesday">Thứ Tư</string>
+    <string name="day_thursday">Thứ Năm</string>
+    <string name="day_friday">Thứ Sáu</string>
+    <string name="day_saturday">Thứ Bảy</string>
+    <string name="day_sunday">Chủ Nhật</string>
+    <string name="format_weekly_reminder_detail">Hàng tuần vào %1$s lúc %2$s</string>
+</resources>

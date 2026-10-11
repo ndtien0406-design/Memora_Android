@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Memora</string>
+    <string name="title_my_hobbies">My Hobbies</string>
+    <string name="subtitle_hobbies_count">(%1$d hobbies)</string>
+    <string name="items_count">%1$d items</string>
+    <string name="category_all">All</string>
+    <string name="sort_label">Sort</string>
+    <string name="action_add_hobby">Add Hobby</string>
+
+    <!-- Add / Edit Hobby -->
+    <string name="title_add_hobby">Add Hobby</string>
+    <string name="title_edit_hobby">Edit Hobby</string>
+    <string name="label_hobby_name">Hobby Name</string>
+    <string name="hint_hobby_name">E.g. Reading, Jogging…</string>
+    <string name="label_category">Category</string>
+    <string name="label_rating">Interest Rating</string>
+    <string name="rating_format">%1$d / 5 stars</string>
+    <string name="label_note">Notes &amp; Reflections</string>
+    <string name="hint_note">Write a few thoughts, memories about this hobby…</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="error_name_required">Please enter a hobby name</string>
+    <string name="error_rating_min">Rating must be at least 1 star</string>
+    <string name="msg_add_success">New hobby added successfully</string>
+    <string name="msg_update_success">Hobby updated successfully</string>
+    <string name="placeholder_media_section">Audio recording and reminders will be available in upcoming steps</string>
+    <string name="action_back">Back</string>
+
+    <!-- Hobby Detail & Delete & Share -->
+    <string name="title_hobby_detail">Detail</string>
+    <string name="action_share">Share</string>
+    <string name="added_date_format">Added on %1$s</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="dialog_delete_title">Delete this hobby?</string>
+    <string name="dialog_delete_message">Photos and notes will be permanently deleted and cannot be recovered.</string>
+    <string name="dialog_title_share">Share Hobby</string>
+    <string name="switch_include_image">Include photo</string>
+    <string name="switch_include_note">Include note</string>
+    <string name="header_content_to_send">CONTENT TO SEND</string>
+    <string name="share_format_category">Category: %1$s</string>
+    <string name="share_format_rating">Rating: %1$d/5 stars</string>
+    <string name="share_format_note">Note: %1$s</string>
+    <string name="share_via">Share hobby via</string>
+    <string name="msg_delete_success">Hobby deleted</string>
+
+    <!-- Image Picker & Camera -->
+    <string name="dialog_title_add_photo">Add Photo</string>
+    <string name="action_take_photo">Take Photo</string>
+    <string name="action_choose_gallery">Choose from Gallery</string>
+    <string name="action_remove_photo">Remove Photo</string>
+    <string name="label_cover_photo">Cover Photo</string>
+    <string name="hint_tap_to_add_photo">Tap to take or choose photo</string>
+    <string name="hint_photo_types">Supports JPG, PNG formats</string>
+    <string name="dialog_title_camera_permission">Allow Camera Access</string>
+    <string name="dialog_msg_camera_permission">The app needs camera permission to capture photos for your hobbies.</string>
+    <string name="btn_permission_allow">Allow</string>
+    <string name="btn_permission_later">Later</string>
+    <string name="msg_camera_permission_denied">Camera permission denied. You can still choose photos from gallery.</string>
+    <string name="msg_photo_saved">Hobby photo updated</string>
+    <string name="msg_photo_removed">Photo removed</string>
+
+    <!-- Search bar -->
+    <string name="search_hint">Search hobbies, categories, notes…</string>
+    <string name="action_search">Search</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_view_mode">View mode</string>
+
+    <!-- Empty state -->
+    <string name="empty_title">No hobbies yet</string>
+    <string name="empty_subtitle">Start saving what you love: songs, books, travels…</string>
+    <string name="btn_add_first_hobby">＋ Add first hobby</string>
+    <string name="empty_search_title">No results found</string>
+    <string name="empty_search_subtitle">Try another keyword or select a category</string>
+    <string name="btn_clear_filters">Clear filters</string>
+
+    <!-- Sort & Filter BottomSheet -->
+    <string name="title_sort_and_filter">Sort and Filter</string>
+    <string name="header_sort_by">SORT BY</string>
+    <string name="sort_name_az">Name (A–Z)</string>
+    <string name="sort_rating_desc">Rating (high to low)</string>
+    <string name="sort_date_desc">Date added (newest)</string>
+    <string name="header_filter_category">CATEGORY</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_apply">Apply</string>
+
+    <!-- Stats Screen (Step 7) -->
+    <string name="title_stats">Statistics</string>
+    <string name="chart_type_pie">Pie</string>
+    <string name="chart_type_bar">Bar</string>
+    <string name="stats_total_format">Total\n%1$d</string>
+    <string name="total_hobbies_label">Total Hobbies</string>
+    <string name="header_category_distribution">Category Distribution</string>
+    <string name="header_category_breakdown">CATEGORY BREAKDOWN</string>
+    <string name="category_count_badge">%1$d Categories</string>
+    <string name="empty_stats_title">No statistics data yet</string>
+    <string name="empty_stats_desc">Add hobbies to view category distribution charts and proportions.</string>
+    <string name="category_item_stat_format">%1$d items (%2$d%%)</string>
+    <string name="hobbies_count_format">%1$d hobbies</string>
+    <string name="action_open_stats">Statistics</string>
+    <string name="action_info">Info</string>
+    <string name="msg_stats_info">Statistical chart showing the number of hobbies per category.</string>
+
+    <!-- Splash Screen (Step 8) -->
+    <string name="splash_subtitle">Keep what you cherish</string>
+    <string name="splash_footer_catalog">PERSONAL CATALOG</string>
+    <string name="splash_footer_version">VERSION 2.4</string>
+
+    <!-- Settings Screen (Step 8 & 12) -->
+    <string name="title_settings">Settings</string>
+    <string name="header_app_customization">APP CUSTOMIZATION</string>
+    <string name="title_display_options">Display Options</string>
+    <string name="desc_display_options">Customize how personal hobbies are shown and organized</string>
+    <string name="label_theme">Theme</string>
+    <string name="desc_theme">Choose color tone suited for reading and writing</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="label_default_sort">Default Sort</string>
+    <string name="desc_default_sort">Default order of hobbies in categories and home screen</string>
+    <string name="sort_option_name">Name A–Z</string>
+    <string name="sort_option_name_desc">Alphabetical order by hobby name</string>
+    <string name="sort_option_rating">Rating</string>
+    <string name="sort_option_rating_desc">Top 5-star favorite hobbies first</string>
+    <string name="sort_option_date">Date added</string>
+    <string name="sort_option_date_desc">Show most recently added hobbies first</string>
+    <string name="label_language">Language</string>
+    <string name="desc_language">Choose display language in the app</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_vietnamese_desc">Vietnamese</string>
+    <string name="lang_english">English</string>
+    <string name="lang_english_desc">English</string>
+    <string name="settings_footer_credit">HOBBIES • PERSONAL CURATION NOTEBOOK</string>
+    <string name="header_category_suggestions">CATEGORY SUGGESTIONS</string>
+    <string name="tap_to_try">Tap to try</string>
+    <string name="suggestion_book_title">Books</string>
+    <string name="suggestion_book_desc">Quotes &amp; feelings</string>
+    <string name="suggestion_music_title">Music</string>
+    <string name="suggestion_music_desc">Afternoon tracks</string>
+
+    <!-- Voice Note / Audio Recording (Step 10) -->
+    <string name="label_voice_note">Voice Note</string>
+    <string name="btn_tap_to_record">Tap to record</string>
+    <string name="recording_format">Recording %1$s</string>
+    <string name="btn_stop_recording">Stop</string>
+    <string name="msg_record_permission_denied">Audio recording permission denied. You cannot record voice notes.</string>
+    <string name="msg_record_permission_rationale">The app needs microphone permission to record voice notes.</string>
+    <string name="msg_recording_error">Cannot start audio recorder</string>
+    <string name="msg_playback_error">Cannot play audio file</string>
+    <string name="msg_audio_deleted">Voice note deleted</string>
+    <string name="action_delete_audio">Delete voice note</string>
+    <string name="initial_audio_duration">00:00</string>
+
+    <!-- Reminder Notifications (Step 11) -->
+    <string name="label_reminder">Reminder</string>
+    <string name="desc_reminder">Receive periodic notifications about this hobby</string>
+    <string name="label_reminder_date">Reminder date</string>
+    <string name="label_reminder_time">Reminder time</string>
+    <string name="title_pick_time">Set reminder time</string>
+    <string name="btn_pick_time_positive">Set</string>
+    <string name="btn_pick_time_negative">Cancel</string>
+    <string name="error_reminder_past">Reminder time must be in the future</string>
+    <string name="msg_notification_permission_denied">Notification permission denied. Reminders will not appear in the status bar.</string>
+    <string name="reminder_notification_title">Hobbies</string>
+    <string name="reminder_notification_content_format">Time for: %1$s</string>
+    <string name="reminder_detail_format">Reminder at %1$s, %2$s</string>
+    <string name="channel_reminders_name">Hobby Reminders</string>
+    <string name="channel_reminders_desc">Notifications channel for periodic hobby reminders</string>
+    <string name="title_pick_date">Set reminder date</string>
+
+    <!-- Additional UI & Error strings (Step 12) -->
+    <string name="action_change_photo">Change photo</string>
+    <string name="detail_rating_format">%1$d/5 stars</string>
+    <string name="detail_no_notes">(No notes for this hobby)</string>
+    <string name="btn_understood">Understood</string>
+    <string name="btn_close">Close</string>
+    <string name="about_dialog_message">Hobbies • Personal Curation Notebook\nVersion 2.4</string>
+    <string name="stats_share_format">My hobby statistics: Total %1$d hobbies on Hobbies app!</string>
+    <string name="error_cannot_open_camera">Cannot open camera</string>
+    <string name="error_cannot_read_gallery">Cannot read photo from gallery</string>
+    <string name="error_hobby_not_found">Hobby not found</string>
+    <string name="error_cannot_update_hobby">Cannot update hobby</string>
+    <string name="error_cannot_add_hobby">Cannot add hobby</string>
+    <string name="error_cannot_delete_hobby">Cannot delete hobby</string>
+
+    <!-- Specific UI strings matching screenshots -->
+    <string name="header_display_catalog">DISPLAY CATALOG</string>
+    <string name="sort_dropdown_newest">Newest</string>
+    <string name="title_add_photo_memory">Add keepsake photo</string>
+    <string name="desc_add_photo_memory">Preserve book covers, vinyls, film rolls or precious moments</string>
+    <string name="label_category_storage">Storage category</string>
+    <string name="label_rating_feeling">Interest rating</string>
+    <string name="rating_excellent_review">%1$d/5 stars – Personal masterpiece</string>
+    <string name="label_notes_page">Notebook page</string>
+    <string name="btn_save_to_library">Save to library</string>
+    <string name="btn_cancel_save">Cancel save</string>
+    <string name="reminder_repeat_weekly">Weekly on Friday</string>
+    <string name="action_change">Change</string>
+    <string name="title_hobby">Hobby</string>
+    <string name="catalog_index_format">CATALOG #%1$03d</string>
+
+    <!-- Navigation -->
+    <string name="nav_hobbies">Hobbies</string>
+    <string name="nav_stats">Statistics</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- 7 fixed categories according to SPEC -->
+    <string name="category_music">Music</string>
+    <string name="category_movie">Movies</string>
+    <string name="category_book">Books</string>
+    <string name="category_sport">Sports</string>
+    <string name="category_travel">Travel</string>
+    <string name="category_food">Food &amp; Cuisine</string>
+    <string name="category_other">Other</string>
+
+    <string-array name="category_array">
+        <item>@string/category_music</item>
+        <item>@string/category_movie</item>
+        <item>@string/category_book</item>
+        <item>@string/category_sport</item>
+        <item>@string/category_travel</item>
+        <item>@string/category_food</item>
+        <item>@string/category_other</item>
+    </string-array>
+</resources>
